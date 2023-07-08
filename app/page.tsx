@@ -1,10 +1,21 @@
-import Image from 'next/image'
+import Link from "next/link";
+import Header from "./components/Header";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className='text-2xl flex flex-col justify-center items-center h-screen'>
-      <p className='bg-clip-text text-transparent bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 text-bold md:text-4xl'>Pavel Music Website!</p>
-      <p className='text-sm animate-pulse md:text-lg'>under construction...</p>
+    <main className='text-2xl flex flex-col justify-center items-center h-screen bg-black'>
+      <Header/>
+      <p className='text-white text-bold text-[50px] uppercase'>Pavels/Music</p>
+      <h5 className="text-white font-serif text-[20px] mt-10">Listen on </h5>
+
+      <div>
+        <Link href="https://music.apple.com/us/artist/pavels-music/1608194615"><Image src="/apple1.png" width={100} height={100} alt="apple" className=""/></Link>
+        <Image src="/spotifyy.png" width={100} height={100} alt="apple" className=""/>
+        <Image src="/amazon.png" width={100} height={100} alt="apple" className=""/>
+        <Image src="/deezer.png" width={100} height={100} alt="apple" className=""/>
+      </div>
+      
     </main>
   )
 }
