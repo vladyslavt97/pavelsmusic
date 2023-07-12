@@ -10,10 +10,10 @@ export default function Home() {
       <h5 className="text-white font-serif text-[20px] mt-10">Listen on </h5>
 
       <div>
-        <Link href="https://music.apple.com/us/artist/pavels-music/1608194615"><Image src="/apple1.png" width={100} height={100} alt="apple" className=""/></Link>
-        <Image src="/spotifyy.png" width={100} height={100} alt="apple" className=""/>
-        <Image src="/amazon.png" width={100} height={100} alt="apple" className=""/>
-        <Image src="/deezer.png" width={100} height={100} alt="apple" className=""/>
+        <Link href="https://music.apple.com/us/artist/pavels-music/1608194615"><Image src="/apple1.png" width={100} height={100} alt="apple" className="py-1"/></Link>
+        <Image src="/spotifyy.png" width={100} height={100} alt="apple" className="py-1"/>
+        <Image src="/amazon1.png" width={100} height={100} alt="apple" className="py-1"/>
+        <Image src="/deezer.png" width={100} height={100} alt="apple" className="py-1"/>
       </div>
       
     </main>
