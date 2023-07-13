@@ -14,9 +14,9 @@ export default function Home() {
 
         <div className="">
           <Link href="https://music.apple.com/us/artist/pavels-music/1608194615"><Image src="/apple1.png" width={100} height={100} alt="apple" className="py-1"/></Link>
-          <Image src="/spotifyy.png" width={100} height={100} alt="apple" className="py-1"/>
-          <Image src="/amazon1.png" width={100} height={100} alt="apple" className="py-1"/>
-          <Image src="/deezer.png" width={100} height={100} alt="apple" className="py-1"/>
+          <Link href=""><Image src="/spotifyy.png" width={100} height={100} alt="apple" className="py-1"/></Link>
+          <Link href=""><Image src="/amazon1.png" width={100} height={100} alt="apple" className="py-1"/></Link>
+          <Link href=""><Image src="/deezer.png" width={100} height={100} alt="apple" className="py-1"/></Link>
         </div>
       </div>
       
