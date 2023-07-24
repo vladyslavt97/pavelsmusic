@@ -1,0 +1,32 @@
+[
+    {
+        "linik": "https://music.apple.com/us/artist/pavels-music/1608194615",
+        "size": 100,
+        "delay": 0.2,
+        "image": "/apple1.png"
+    },
+    {
+        "linik": "https://open.spotify.com/artist/10yXiUlSrROMsEUN2tn4vo?si=sRymkUglTWK_9CEi2XVL1A",
+        "size": 100,
+        "delay": 0.4,
+        "image": "/spotifyy.png"
+    },
+    {
+        "linik": "https://music.amazon.de/artists/B09RQ38ZBN?ref=dm_sh_JlWevsn20wYn3FnxvgSkTna2g",
+        "size": 100,
+        "delay": 0.6,
+        "image": "/amazon1.png"
+    },
+    {
+        "linik": "https://deezer.page.link/WGMjU9M1xkFXY36K7",
+        "size": 100,
+        "delay": 0.8,
+        "image": "/deezer.png"
+    },
+    {
+        "linik": "https://music.youtube.com/channel/UCrVMHk4yP7q_hcRgwGJyVtA?feature=share",
+        "size": 150,
+        "delay": 1,
+        "image": "/youtube-music1.png"
+    }
+]
