@@ -8,15 +8,24 @@ import links from "../links.json"
 
 export default function Home() {
   return (
-    <main className='text-2xl flex flex-col justify-center items-center bg-black min-h-screen'>
+    <main className='text-2xl flex flex-col justify-center items-center bg-black min-h-screen overflow-x-hidden'>
+      <motion.div
+      initial={{opacity: 0, x: -10}}
+      animate={{opacity: 1, x: 70}}
+      transition={{duration: 10}}
+      className="absolute right-0"
+      >
+        <Image src="/pavelmain.jpg" alt="photo" width={1000} height={1000} className="h-screen object-cover z-0 md:hidden"/>
+      </motion.div>
+    
       <Header/>
 
-      <div className="flex justify-center flex-col items-center">
+      <div className="flex justify-center flex-col items-center z-10">
         <motion.p 
         initial={{opacity:0}}
         animate={{opacity:1}}
         transition={{duration:2}}
-        className='text-white text-bold text-[40px] sm:text-[50px] uppercase'>Pavels/Music</motion.p>
+        className='text-white text-bold text-[40px] uppercase mt-10'>Pavels/Music</motion.p>
 
         <motion.div
             initial={{opacity:0}}
