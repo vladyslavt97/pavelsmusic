@@ -1,4 +1,3 @@
-import Header from './components/Header'
 import './globals.css'
 import { Rubik } from 'next/font/google'
 
@@ -15,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className='bg-black h-screen'>
       <body className={inter.className}>{children}</body>
     </html>
   )

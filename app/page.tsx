@@ -8,17 +8,19 @@ import links from "../links.json"
 
 export default function Home() {
   return (
-    <main className='text-2xl flex flex-col justify-center items-center bg-black min-h-screen overflow-x-hidden'>
-      <motion.div
-      initial={{opacity: 0, x: -10}}
-      animate={{opacity: 1, x: 70}}
-      transition={{duration: 10}}
-      className="absolute right-0"
-      >
-        <Image src="/pavelmain.jpg" alt="photo" width={1000} height={1000} className="h-screen object-cover z-0 md:hidden"/>
-      </motion.div>
+    <main className='text-2xl flex flex-col justify-center items-center bg-black h-screen overflow-x-hidden'>
+        <motion.div
+        initial={{opacity: 0, x: 20}}
+        animate={{opacity: 0.8, x: 100}}
+        transition={{duration: 10}}
+        className="absolute right-0"
+        >
+          <Image src="/pavelmain.jpg" alt="photo" width={1000} height={1000} className="h-screen object-cover z-0 md:hidden"/>
+        </motion.div>
+
     
       <Header/>
+
 
       <div className="flex justify-center flex-col items-center z-10">
         <motion.p 
@@ -50,11 +52,14 @@ export default function Home() {
           ))}
           
 
-          {/* 
-
-          <Link href=""><Image src="" width={150} height={100} alt="youtube" className="py-1" loading="eager"/></Link> */}
         </div>
+
+
       </div>
+        
+      <h1 className="text-white text-sm z-50 absolute bottom-2">pavelkuznetsov.berlin@gmail.com</h1>
+      
+      
       
     </main>
   )
