@@ -57,7 +57,11 @@ export default function Home() {
 
       </div>
         
-      <h1 className="text-white text-sm z-50 absolute bottom-2">pavelkuznetsov.berlin@gmail.com</h1>
+      <motion.h1 
+      transition={{duration:3}}
+      initial={{opacity: 0}}
+      animate={{opacity:1}}
+      className="text-white text-sm z-50 absolute bottom-2">pavelkuznetsov.berlin@gmail.com</motion.h1>
       
       
       
