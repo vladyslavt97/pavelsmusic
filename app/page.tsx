@@ -63,8 +63,6 @@ export default function Home() {
       animate={{opacity:1}}
       className="text-white text-sm z-50 absolute bottom-2">pavelkuznetsov.berlin@gmail.com</motion.h1>
       
-      
-      
     </main>
   )
 }
