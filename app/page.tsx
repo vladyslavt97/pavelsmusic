@@ -23,7 +23,6 @@ export default function Home() {
     const mailtoLink = `mailto:pavelkuznetsov.berlin@gmail.com?subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(body)}`;
-
     window.location.href = mailtoLink;
     event.currentTarget.reset();
   };
