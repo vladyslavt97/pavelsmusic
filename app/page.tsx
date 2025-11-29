@@ -146,16 +146,16 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 1 }}
-            className="absolute -left-6 -top-8 rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm text-white/80 shadow-lg backdrop-blur"
-          >
-            <div className={`${caveat.className} text-xl text-white`}>
-              "write with light."
-            </div>
-            <div className="text-[11px] uppercase tracking-[0.35em] text-white/50">
-              handwritten themes
-            </div>
-          </motion.div>
+          transition={{ delay: 0.4, duration: 1 }}
+          className="absolute -left-6 -top-8 rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm text-white/80 shadow-lg backdrop-blur"
+        >
+          <div className={`${caveat.className} text-xl text-white`}>
+              &ldquo;write with light.&rdquo;
+          </div>
+          <div className="text-[11px] uppercase tracking-[0.35em] text-white/50">
+            handwritten themes
+          </div>
+        </motion.div>
         </div>
       </motion.div>
 
