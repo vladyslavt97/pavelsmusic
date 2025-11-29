@@ -5,12 +5,28 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import links from "../links.json";
 import { Caveat, Manrope } from "next/font/google";
+import { FormEvent } from "react";
 
 const manrope = Manrope({ subsets: ["latin"] });
 const caveat = Caveat({ subsets: ["latin"], weight: ["400", "700"] });
 
 export default function Home() {
   const primaryLink = links[0]?.linik || "#";
+  const handleContactSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const name = (data.get("name") as string) || "Listener";
+    const email = (data.get("email") as string) || "";
+    const message = (data.get("message") as string) || "";
+    const subject = `New message for Pavel Kuznetsov`;
+    const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+    const mailtoLink = `mailto:pavelkuznetsov.berlin@gmail.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoLink;
+    event.currentTarget.reset();
+  };
 
   return (
     <main
@@ -48,7 +64,7 @@ export default function Home() {
               finish.
             </h1>
             <p className="max-w-2xl text-lg text-white/70 sm:text-xl">
-              Pavel K crafts intimate melodies and bold electronic textures built
+              Pavel Kuznetsov crafts intimate melodies and bold electronic textures built
               for film, stage, and late-night playlists. Designed to feel as
               polished as the gear on your desk.
             </p>
@@ -65,10 +81,10 @@ export default function Home() {
               </span>
             </Link>
             <a
-              href="mailto:pavelkuznetsov.berlin@gmail.com"
+              href="#contact"
               className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-5 py-3 text-white/90 backdrop-blur transition hover:-translate-y-0.5 hover:border-white hover:bg-white/20"
             >
-              <span>Book for a score</span>
+              <span>Request a score</span>
             </a>
           </div>
 
@@ -108,10 +124,10 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-black/60" />
             <Image
               src="/pavelmain.jpg"
-              alt="Pavel K performing at the piano"
+              alt="Pavel Kuznetsov performing at the piano"
               width={1200}
               height={1400}
-              className="h-[460px] w-full object-cover sm:h-[520px]"
+              className="h-[460px] w-full object-cover object-[50%_20%] sm:h-[520px]"
               priority
             />
             <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between px-6 py-4">
@@ -124,7 +140,7 @@ export default function Home() {
               <div
                 className={`rounded-full bg-white px-4 py-2 text-sm text-black shadow ${caveat.className}`}
               >
-                Pavel K
+                Pavel Kuznetsov
               </div>
             </div>
           </div>
@@ -190,15 +206,73 @@ export default function Home() {
         </div>
       </section>
 
-      <motion.a
-        href="mailto:pavelkuznetsov.berlin@gmail.com"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 1.2 }}
-        className="fixed bottom-6 right-6 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm text-white/80 shadow-lg backdrop-blur hover:border-white/30 hover:bg-white/20"
+      <section
+        id="contact"
+        className="relative z-10 mx-auto mb-20 mt-10 max-w-6xl px-6"
       >
-        pavelkuznetsov.berlin@gmail.com
-      </motion.a>
+        <div className="flex flex-col gap-6 rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.4)] backdrop-blur lg:flex-row lg:items-start lg:p-8">
+          <div className="flex-1 space-y-2">
+            <p className="text-sm uppercase tracking-[0.25em] text-white/50">
+              Compose together
+            </p>
+            <h2 className="text-3xl text-white sm:text-4xl">Tell Pavel about your project</h2>
+            <p className="max-w-xl text-white/70">
+              Drop a note about your film, performance, or collaboration. The form opens
+              your email client so it sends directly—no third-party services required.
+            </p>
+          </div>
+          <form
+            onSubmit={handleContactSubmit}
+            className="flex-1 space-y-4 rounded-2xl border border-white/10 bg-black/40 p-5 shadow-inner"
+          >
+            <div className="space-y-2">
+              <label htmlFor="name" className="text-sm text-white/70">
+                Name
+              </label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Your name"
+                className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-white placeholder:text-white/30 focus:border-white focus:outline-none"
+                required
+              />
+            </div>
+            <div className="space-y-2">
+              <label htmlFor="email" className="text-sm text-white/70">
+                Email
+              </label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+                className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-white placeholder:text-white/30 focus:border-white focus:outline-none"
+                required
+              />
+            </div>
+            <div className="space-y-2">
+              <label htmlFor="message" className="text-sm text-white/70">
+                Project details
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows={4}
+                placeholder="Share the mood, timeline, and instrumentation you have in mind."
+                className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-white placeholder:text-white/30 focus:border-white focus:outline-none"
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-full rounded-full bg-white px-6 py-3 text-sm font-semibold text-black shadow-lg shadow-cyan-400/20 transition hover:-translate-y-0.5 hover:shadow-cyan-300/40"
+            >
+              Send directly from here
+            </button>
+          </form>
+        </div>
+      </section>
     </main>
   );
 }
